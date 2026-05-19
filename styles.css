@@ -32,3 +32,36 @@ em { color: var(--sage-deep); font-style: italic; }
 img { display: block; max-width: 100%; }
 
 .hidden { display: none; }
+
+/* Buttons */
+
+.btn-solid, .btn-outline {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid var(--ink);
+}
+.btn-solid { background: var(--ink); color: var(--cream); }
+.btn-solid:hover { background: var(--sage-deep); border-color: var(--sage-deep); }
+.btn-outline { background: transparent; color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+.link-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--sans); color: var(--muted);
+  text-decoration: underline; font-size: 0.85rem;
+}
+.link-btn:hover { color: var(--sage-deep); }
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  margin-bottom: 1rem;
+}
