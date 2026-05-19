@@ -100,3 +100,44 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 }
 .lede { margin: 1.5rem 0 2rem; color: var(--muted); max-width: 28rem; }
 .hero-image img { aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; width: 100%; }
+
+
+/* Menu */
+.menu { padding: 4rem 0; border-top: 1px solid var(--border); }
+.section-intro { color: var(--muted); margin-bottom: 3rem; }
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 640px) { .drink-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .drink-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.drink-card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.drink-card:hover { transform: translateY(-4px); }
+.drink-card img { aspect-ratio: 4/5; object-fit: cover; width: 100%; }
+.drink-card .body { padding: 1.25rem; }
+.drink-card h3 { margin-top: 0; font-size: 1.4rem; }
+.drink-card .tagline { color: var(--sage-deep); font-style: italic; font-size: 0.9rem; }
+.drink-card .ing { color: var(--muted); font-size: 0.85rem; margin-top: 0.75rem; }
+
+
+/* About Steps */
+
+.about { padding: 4rem 0; border-top: 1px solid var(--border); }
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.step { padding: 1.5rem; background: var(--sage-pale); border-radius: 4px; }
+.step-num { font-family: var(--serif); font-size: 2rem; color: var(--sage-deep); }
+.step p { color: var(--muted); }
+
