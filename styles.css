@@ -224,3 +224,14 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 .ingredients li::before { content: "· "; color: var(--sage-deep); }
 
 .result-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+
+/* Footer */
+footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
