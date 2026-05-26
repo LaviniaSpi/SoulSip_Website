@@ -7,14 +7,14 @@ const drinks = {
     tagline: "For the introspective.",
     image: "images/matcha.jpg",
     traits: ["Reflective", "Steady", "Curious"],
-    ingredients: ["Ceremonial matcha", "Oat milk", "Raw honey", "Vanilla"],
+    ingredients: ["Ceremonial matcha", "Oat milk", "Honey", "Vanilla"],
     pairing: "You keep a notebook close and listen more than you speak.",
   },
   rose: {
     name: "Rose Reverie",
     tagline: "For the romantic.",
     image: "images/rose.jpg",
-    traits: ["Tender", "Imaginative", "Open-hearted"],
+    traits: ["Soft", "Imaginative", "Open-hearted"],
     ingredients: ["Hibiscus tea", "Rose syrup", "Lemon", "Sparkling water", "Rose petals"],
     pairing: "You fall in love with mornings, strangers, and small details.",
   },
@@ -24,7 +24,7 @@ const drinks = {
     image: "images/espresso.jpg",
     traits: ["Driven", "Sharp", "Independent"],
     ingredients: ["Double espresso", "Tonic water", "Orange peel", "Ice"],
-    pairing: "A clean jolt for a mind that moves fast and finishes what it starts.",
+    pairing: "A strong drink for a mind that moves fast and finishes what it starts.",
   },
   golden: {
     name: "Golden Hour",
@@ -46,7 +46,7 @@ const drinks = {
 
 const questions = [
   { q: "It's a free Saturday morning. You…", a: [
-    { text: "Read by the window with a slow drink", drink: "matcha" },
+    { text: "Read by the window with a drink", drink: "matcha" },
     { text: "Walk somewhere you've never been", drink: "rose" },
     { text: "Knock out the to-do list before noon", drink: "espresso" },
     { text: "Cook breakfast for whoever's around", drink: "golden" },
