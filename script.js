@@ -1,13 +1,13 @@
 // -- Data -- //
 
-// -- Drinks --// 
+// -- Drinks -- // 
 const drinks = {
   matcha: {
     name: "Quiet Matcha",
     tagline: "For the introspective.",
     image: "images/matcha.jpg",
     traits: ["Reflective", "Steady", "Curious"],
-    ingredients: ["Ceremonial matcha", "Oat milk", "Honey", "Vanilla"],
+    ingredients: ["Matcha", "Oat milk", "Honey", "Vanilla"],
     pairing: "You keep a notebook close and listen more than you speak.",
   },
   rose: {
@@ -80,48 +80,13 @@ const questions = [
     { text: "Handmade and warm", drink: "golden" },
     { text: "Strange, soft, a little odd", drink: "lavender" },
   ]},
-  { q: "When something goes wrong, you…", a: [
-    { text: "Sit with it before reacting", drink: "matcha" },
-    { text: "Talk it through with someone close", drink: "rose" },
-    { text: "Fix it, then move on", drink: "espresso" },
-    { text: "Hold space for everyone else first", drink: "golden" },
-    { text: "Wander until your head clears", drink: "lavender" },
-  ]},
-  { q: "Pick a place to live for a year:", a: [
-    { text: "A stone cottage near a forest", drink: "matcha" },
-    { text: "An old apartment in Paris", drink: "rose" },
-    { text: "A clean loft in a busy city", drink: "espresso" },
-    { text: "A farmhouse with a big kitchen", drink: "golden" },
-    { text: "A studio above a flower shop", drink: "lavender" },
-  ]},
-  { q: "Your texting style is…", a: [
-    { text: "Considered, sometimes slow", drink: "matcha" },
-    { text: "Warm, full of feelings", drink: "rose" },
-    { text: "Short, useful, on point", drink: "espresso" },
-    { text: "Checking in, making plans", drink: "golden" },
-    { text: "Voice notes, tangents, jokes", drink: "lavender" },
-  ]},
-  { q: "Choose a sound:", a: [
-    { text: "Rain on a window", drink: "matcha" },
-    { text: "A vinyl record crackling", drink: "rose" },
-    { text: "A typewriter at speed", drink: "espresso" },
-    { text: "A kettle starting to whistle", drink: "golden" },
-    { text: "Wind chimes from far away", drink: "lavender" },
-  ]},
-  { q: "What do you want from your next year?", a: [
-    { text: "More stillness", drink: "matcha" },
-    { text: "More beauty", drink: "rose" },
-    { text: "More progress", drink: "espresso" },
-    { text: "More togetherness", drink: "golden" },
-    { text: "More wonder", drink: "lavender" },
-  ]},
 ];
 
-// ===== State =====
+// -- State -- //
 let currentQuestion = 0;
 let scores = {};
 
-// ===== Page switching =====
+// -- Page switching -- //
 const pages = {
   home: document.getElementById("home-page"),
   test: document.getElementById("test-page"),
@@ -135,7 +100,7 @@ function showPage(name) {
   if (name === "test") startTest();
 }
 
-// ===== Render the menu on the home page =====
+// -- Render Menu -- //
 function renderMenu() {
   const grid = document.getElementById("drink-grid");
   grid.innerHTML = Object.values(drinks).map(d => `
@@ -150,7 +115,7 @@ function renderMenu() {
   `).join("");
 }
 
-// ===== Test logic =====
+// -- Test logic -- //
 function startTest() {
   currentQuestion = 0;
   scores = { matcha: 0, rose: 0, espresso: 0, golden: 0, lavender: 0 };
@@ -194,26 +159,5 @@ function pickAnswer(drinkKey, btn) {
   }, 200);
 }
 
-function showResult() {
-  // Find the drink with the highest score
-  const winnerKey = Object.entries(scores)
-    .sort((a, b) => b[1] - a[1])[0][0];
-  const drink = drinks[winnerKey];
-
-  document.getElementById("result-image").src = drink.image;
-  document.getElementById("result-image").alt = drink.name;
-  document.getElementById("result-name").textContent = drink.name;
-  document.getElementById("result-tagline").textContent = drink.tagline;
-  document.getElementById("result-pairing").textContent = drink.pairing;
-
-  document.getElementById("result-traits").innerHTML =
-    drink.traits.map(t => `<span class="trait-tag">${t}</span>`).join("");
-
-  document.getElementById("result-ingredients").innerHTML =
-    drink.ingredients.map(i => `<li>${i}</li>`).join("");
-
-  showPage("result");
-}
-
-// ===== Init =====
+// -- Init -- //
 renderMenu();
